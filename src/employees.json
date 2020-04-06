@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Ryan T",
+        "title": "Cook",
+        "manager": "Justin",
+        "yearhired": "1993"
+    },
+    {
+        "id": 2,
+        "name": "Steve J",
+        "title": "Host",
+        "manager": "Dale",
+        "yearhired": "2014"
+    },
+    {
+        "id": 3,
+        "name": "Bob R",
+        "title": "Host",
+        "manager": "Justin",
+        "yearhired": "2012"
+    },
+    {
+        "id": 4,
+        "name": "Darin B",
+        "title": "Cook",
+        "manager": "Steffanie",
+        "yearhired": "2001"
+    },
+    {
+        "id": 5,
+        "name": "Jared S",
+        "title": "Waiter",
+        "manager": "Steffanie",
+        "yearhired": "2009"
+    },
+    {
+        "id": 6,
+        "name": "Ross W",
+        "title": "Host",
+        "manager": "Justin",
+        "yearhired": "2011"
+    },
+    {
+        "id": 7,
+        "name": "Chris J",
+        "title": "Cook",
+        "manager": "Steffanie",
+        "yearhired": "2020"
+    },
+    {
+        "id": 8,
+        "name": "Bill D",
+        "title": "Waiter",
+        "manager": "Steffanie",
+        "yearhired": "2004"
+    }
+]
