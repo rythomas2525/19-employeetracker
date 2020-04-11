@@ -4,7 +4,7 @@ import Home from "./pages/home"
 import Navbar from "./components/Navbar"
 import jobtitle from "./pages/jobtitle"
 import yearhired from "./pages/yearhired"
-import employees from "./employees.json"
+
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
       <div>
         <Navbar />
 
-        <Route exact path="/" component={Home} />
+        <Route exact path="/19-employeetracker" component={Home} />
         <Route exact path="/home" component={Home} />
         <Route exact path="/jobtitle" component={jobtitle} />
         <Route exact path="/yearhired" component={yearhired} />
