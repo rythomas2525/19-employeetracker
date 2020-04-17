@@ -25,22 +25,8 @@ function Navbar() {
                             Home
                             </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link
-                            to="/jobtitle"
-                            className={window.location.pathname === "/jobtitle" ? "nav-link active" : "nav-link"}
-                        >
-                            Job Title
-            </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link
-                            to="/yearhired"
-                            className={window.location.pathname === "/yearhired" ? "nav-link active" : "nav-link"}
-                        >
-                            Year Hired
-            </Link>
-                    </li>
+
+
 
                 </ul>
 

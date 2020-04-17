@@ -1,44 +1,131 @@
 
 
-import React, { Component } from "react";
+import React, { useState } from "react";
 import employees from "../../employees.json";
+import Card from "../Card"
+import Col from "../Col"
 
 
-class FilterDropdown extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectValue: ""
-        };
-
-        this.handleDropdownChange = this.handleDropdownChange.bind(this);
-    }
 
 
-    handleDropdownChange(e) {
-        this.setState({ selectValue: e.target.value });
 
-    }
 
-    render() {
-        return (<div className="dropdown">
-            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
-                Filter Managers</button>
+function sortedCards(selection) {
+    const assortedEmployees = []
 
-            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton" onChange={this.handleDropdownChange}>
+    for (let index = 0; index < employees.length; index++) {
+        if (employees[index].manager === selection) {
+            assortedEmployees.push(employees[index])
+        }
+        console.log("random");
 
-                <option className="dropdown-item" value="Justin">Justin</option>
-                <option className="dropdown-item" value="Dale">Dale</option>
-                <option className="dropdown-item" value="Steffanie" >Steffanie</option>
-
-            </div>
-
-            <div>Selected value is : {this.state.selectValue} </div>
-        </div>
-        )
 
     }
+    console.log(assortedEmployees);
+
+
+    return assortedEmployees;
 }
+
+
+
+function FilterDropdown() {
+
+    const options = ["", "Steffanie", "Justin", "Dale"]
+    const [selection, setSelection] = useState("");
+
+
+
+
+    return (
+        <div>
+            <label htmlFor='options'>
+                Filter By Manager
+            <select
+                    id='options'
+                    value={selection}
+                    onChange={(e) => setSelection(e.target.value)}>
+                    {options.map((option) => (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                    ))}
+                </select>
+            </label>
+
+            {selection === "Steffanie" && (
+                <div>
+                    {sortedCards(selection).map(employees => (
+                        <Col size="md-8">
+                            <Card
+                                key={employees.name}
+                                name={employees.name}
+                                title={employees.title}
+                                manager={employees.manager}
+                                yearhired={employees.yearhired}
+                            />
+                        </Col>
+
+                    ))}
+
+
+
+
+
+
+
+
+
+
+                </div>
+            )}
+            {selection === "Justin" && <div><div>
+                {sortedCards(selection).map(employees => (
+                    <Card
+                        name={employees.name}
+                        title={employees.title}
+                        manager={employees.manager}
+                        yearhired={employees.yearhired}
+                    />
+
+                ))}
+
+
+
+
+
+
+
+
+
+
+            </div></div>}
+            {selection === "Dale" && <div><div>
+                {sortedCards(selection).map(employees => (
+                    <Card
+                        name={employees.name}
+                        title={employees.title}
+                        manager={employees.manager}
+                        yearhired={employees.yearhired}
+                    />
+
+                ))}
+
+
+
+
+
+
+
+
+
+
+            </div></div>}
+        </div>
+    );
+
+
+}
+
 
 export default FilterDropdown;
